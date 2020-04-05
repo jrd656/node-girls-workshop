@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/node-girls/node-workshop/issues"
   },
-  "homepage": "https://github.com/node-girls/node-workshop#readme"
+  "homepage": "https://github.com/node-girls/node-workshop#readme",
+  "dependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
