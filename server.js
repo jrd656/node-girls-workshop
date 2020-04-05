@@ -25,6 +25,7 @@ function handler(request, response) {
                 console.log(error)
                 return;
             }
+            response.end(file)
         })
         //...
     } else if (endpoint === '/girls') {
@@ -34,10 +35,28 @@ function handler(request, response) {
                 console.log(error)
                 return;
             }
+            response.end(file)
         })
         //...
-    } else {
-
+    } else if (endpoint === '/main.css'){
+        response.writeHead(200, { "Content-Type" : "text/css"})
+        fs.readFile(__dirname + "/public/main.css", function (error,file){
+            if(error){
+                console.log(error)
+                return;
+            }
+            response.end(file)
+        })
+        // TODO - write your generic endpoint code here
+    } else if (endpoint === '/img/image.jpg'){
+        response.writeHead(200, { "Content-Type" : "image/jpeg"})
+        fs.readFile(__dirname + "/public/img/image.jpg", function (error,file){
+            if(error){
+                console.log(error)
+                return;
+            }
+            response.end(file)
+        })
         // TODO - write your generic endpoint code here
     }
 }
